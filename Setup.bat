@@ -10,10 +10,12 @@ echo.
 echo Setting up desktop shortcuts and launching application...
 echo.
 
-if exist "%~dp0dist\Fantasy_Assistant.exe" (
+if exist "%~dp0Fantasy_Assistant.exe" (
+    powershell -Command "$WshShell = New-Object -ComObject WScript.Shell; $Desktop = [System.Environment]::GetFolderPath('Desktop'); $Shortcut = $WshShell.CreateShortcut(\"$Desktop\Fantasy NFL Assistant.lnk\"); $Shortcut.TargetPath = '%~dp0Fantasy_Assistant.exe'; $Shortcut.WorkingDirectory = '%~dp0'; $Shortcut.IconLocation = '%~dp0icon.ico'; $Shortcut.Description = 'Launch Fantasy NFL Dynasty Assistant'; $Shortcut.Save()"
+) else if exist "%~dp0dist\Fantasy_Assistant.exe" (
     powershell -Command "$WshShell = New-Object -ComObject WScript.Shell; $Desktop = [System.Environment]::GetFolderPath('Desktop'); $Shortcut = $WshShell.CreateShortcut(\"$Desktop\Fantasy NFL Assistant.lnk\"); $Shortcut.TargetPath = '%~dp0dist\Fantasy_Assistant.exe'; $Shortcut.WorkingDirectory = '%~dp0'; $Shortcut.IconLocation = '%~dp0icon.ico'; $Shortcut.Description = 'Launch Fantasy NFL Dynasty Assistant'; $Shortcut.Save()"
 ) else (
-    powershell -Command "$WshShell = New-Object -ComObject WScript.Shell; $Desktop = [System.Environment]::GetFolderPath('Desktop'); $Shortcut = $WshShell.CreateShortcut(\"$Desktop\Fantasy NFL Assistant.lnk\"); $Shortcut.TargetPath = 'wscript.exe'; $Shortcut.Arguments = '\"%~dp0Launch_Fantasy_Assistant.vbs\"'; $Shortcut.WorkingDirectory = '%~dp0'; $Shortcut.IconLocation = '%~dp0icon.ico'; $Shortcut.Description = 'Launch Fantasy NFL Dynasty Assistant'; $Shortcut.Save()"
+    powershell -Command "$WshShell = New-Object -ComObject WScript.Shell; $Desktop = [System.Environment]::GetFolderPath('Desktop'); $Shortcut = $WshShell.CreateShortcut(\"$Desktop\Fantasy NFL Assistant.lnk\"); $Shortcut.TargetPath = '%~dp0Launch_Fantasy_Assistant.bat'; $Shortcut.WorkingDirectory = '%~dp0'; $Shortcut.IconLocation = '%~dp0icon.ico'; $Shortcut.Description = 'Launch Fantasy NFL Dynasty Assistant'; $Shortcut.Save()"
 )
 
 echo [OK] Desktop shortcut created successfully!
