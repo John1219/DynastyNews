@@ -7,8 +7,8 @@ A portable, standalone web application and data radar built for **Dynasty Footba
 ## 📦 Quick Installation Guide (For League Members)
 
 1. **Extract the ZIP Archive**:
-   - Copy or download `FantasyAssistant_v1.0.zip` to any folder on your Windows PC (e.g., `Desktop` or `C:\FantasyAssistant`).
-   - Right-click `FantasyAssistant_v1.0.zip` and select **Extract All...**.
+   - Copy or download `FantasyAssistant_v1.2.zip` to any folder on your Windows PC (e.g., `Desktop` or `C:\FantasyAssistant`).
+   - Right-click `FantasyAssistant_v1.2.zip` and select **Extract All...**.
 
 2. **One-Click Setup**:
    - Open the extracted folder and double-click **`Setup.bat`**.
